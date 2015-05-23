@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<document filename="resolucion.pdf">
+  <template pageSize="(612.0,792.0)" title="Test" author="Martin Simon" allowSplitting="20">
+    <pageTemplate id="first">
+      <frame id="first" x1="85.0" y1="57.0" width="442" height="678"/>
+    </pageTemplate>
+  </template>
+  <stylesheet>
+    <blockTableStyle id="Standard_Outline">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+    </blockTableStyle>
+        <blockTableStyle id="Table8">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBELOW" colorName="#0000" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#0000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#0000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#0000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#0000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#0000" start="5,-1" stop="5,-1"/>
+    </blockTableStyle>
+
+    <initialize>
+      <paraStyle name="all" alignment="justify"/>
+    </initialize>
+    <paraStyle name="P1" fontName="Helvetica"/>
+    <paraStyle name="P2" rightIndent="0.0" leftIndent="0.0" fontName="Helvetica" fontSize="12.0" leading="15" alignment="JUSTIFY" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P3" rightIndent="0.0" leftIndent="0.0" fontName="Helvetica-Bold" fontSize="12.0" leading="15" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P4" rightIndent="0.0" leftIndent="0.0" fontName="Helvetica-Bold" fontSize="12.0" leading="15" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P5" rightIndent="0.0" leftIndent="0.0" fontName="Helvetica-Bold" fontSize="12.0" leading="15" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P6" rightIndent="0.0" leftIndent="0.0" fontName="Helvetica" fontSize="12.0" leading="15" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P7" rightIndent="0.0" leftIndent="0.0" fontName="Helvetica" fontSize="12.0" leading="15" alignment="JUSTIFY" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P8" rightIndent="0.0" leftIndent="0.0" fontName="Helvetica-Bold" fontSize="12.0" leading="15" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="Standard" fontName="Helvetica"/>
+    <paraStyle name="Heading" fontName="Helvetica" fontSize="14.0" leading="17" spaceBefore="12.0" spaceAfter="6.0"/>
+    <paraStyle name="Text body" fontName="Helvetica" spaceBefore="0.0" spaceAfter="6.0"/>
+    <paraStyle name="List" fontName="Helvetica" spaceBefore="0.0" spaceAfter="6.0"/>
+    <paraStyle name="Caption" fontName="Helvetica" fontSize="12.0" leading="15" spaceBefore="6.0" spaceAfter="6.0"/>
+    <paraStyle name="Index" fontName="Helvetica"/>
+    <paraStyle name="Frame contents" fontName="Helvetica" spaceBefore="0.0" spaceAfter="6.0"/>
+    <paraStyle name="Header" fontName="Helvetica"/>
+    <paraStyle name="Normal (Web)" fontName="Helvetica" spaceBefore="14.0" spaceAfter="14.0"/>
+    <paraStyle name="Heading 3" rightIndent="0.0" leftIndent="-3.0" fontName="Helvetica" fontSize="12.0" leading="15" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="MP1" fontName="Helvetica"/>
+    <images/>
+  </stylesheet>
+  <story>
+    <para style="P2">[[ repeatIn(objects,'invoice') ]]</para>
+    
+    <para style="P3">RESOLUCIÓN NÚMERO ______ DE _____</para>
+    <para style="P6">
+      <font color="white"> </font>
+    </para>
+    <para style="P6">
+      <font color="white"> </font>
+    </para>
+    <para style="P6">POR MEDIO DE LA CUAL SE AUTORIZA EL PAGO DE UNA</para>
+    <para style="P6">CUENTA POR PARTE DE LA EMPRESA DE DESARROLLO URBANO DE</para>
+    <para style="P6">ARMENIA LTDA.</para>
+    <para style="P6">
+      <font color="white"> </font>
+    </para>
+    <para style="P6">El Gerente de la Empresa de Desarrollo Urbano de Armenia</para>
+    <para style="P6">Ltda., en uso de sus atribuciones legales y estatutarias,</para>
+    <para style="P4">
+      <font color="white"> </font>
+    </para>
+      <font color="white"> </font>
+    <para style="P4">RESUELVE:</para>
+    <para style="P7">
+      <font color="white"> </font>
+    </para>
+        <section>
+<para style="terp_default_2"></para>
+    <para style="P7">ARTICULO PRIMERO: Autorizar el pago de: [[ invoice.amount_to_text_col or '']]([[ company.currency_id.symbol ]] [[ formatLang(invoice.antotal,2)]].-) <font face="Helvetica">a favor de </font><font face="Helvetica">[[ invoice.partner_id.name]]</font><font face="Helvetica">, </font><font face="Helvetica">por concepto de </font><font face="Helvetica">[[ invoice.comment ]]</font></para>
+    <para style="P7">
+      <font color="white"> </font>
+    </para>
+    </section>
+    <para style="P7"><font face="Helvetica" size="12.0">ARTÍCULO SEGUNDO: </font>El pago anterior se hará con cargo a la apropiación del presupuesto : </para>
+    	<section>
+      <para style="terp_default_2">[[ repeatIn(invoice.ppto_ids,'p') ]]</para>
+      <blockTable colWidths="533.0" style="Standard_Outline">
+        <tr>
+          <td>
+            <para style="P7"><font face="Helvetica">[[ (p.presupuesto_id.idcodigo) ]] - [[ (p.presupuesto_id.name) ]]</font>.</para>
+          </td>          
+        </tr>
+      </blockTable>
+    </section>	
+    
+    <para style="P7">
+      <font color="white"> </font>
+    </para>
+    <para style="P7"><font face="Helvetica" size="12.0">ARTÍCULO TERCERO:</font> La presente resolución rige a partir de la fecha de expedición.</para>
+    <para style="P7">
+      <font color="white"> </font>
+    </para>
+    <para style="P7">
+      <font color="white"> </font>
+    </para>
+    <para style="P6">COMUNÍQUESE Y CUMPLASE</para>
+    <para style="P6">
+      <font color="white"> </font>
+    </para>
+    <para style="P6">
+      <font color="white"> </font>
+    </para>
+    <para style="P7">
+      <font color="white"> </font>
+    </para>
+    <para style="P7">Dada en Armenia - Quindío, a los _____ días del mes de ___________________ del __________</para>
+    <para style="P7">
+      <font color="white"> </font>
+    </para>
+    <para style="P7">
+      <font color="white"> </font>
+    </para>
+    <para style="P7">
+      <font color="white"> </font>
+    </para>
+    <para style="P3">
+      <font color="white"> </font>
+    </para>
+    <para style="P8">SEBASTIAN CONGOTE POSADA</para>
+    <para style="P5">GERENTE</para>
+  </story>
+</document>

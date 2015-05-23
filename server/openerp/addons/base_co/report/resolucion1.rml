@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<document filename="Resolucion.pdf">
+  <template title="Resolucion" author="OpenERP S.A.(sales@openerp.com)" allowSplitting="20" pageSize="(20.5cm,28.0cm)">
+    <pageTemplate id="first">
+      <frame id="first" x1="1.0" y1="1.0" width="530" height="786"/>
+    </pageTemplate>
+  </template>
+  <stylesheet>
+    <blockTableStyle id="Standard_Outline">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+    </blockTableStyle>
+    <initialize>
+      <paraStyle name="all" alignment="justify"/>
+    </initialize>
+    <paraStyle name="P1" fontName="Helvetica"/>
+    <paraStyle name="P2" rightIndent="0.0" leftIndent="0.0" fontName="Helvetica" alignment="JUSTIFY"/>
+    <paraStyle name="P3" rightIndent="0.0" leftIndent="0.0" fontName="Helvetica" fontSize="12.0" leading="15" alignment="JUSTIFY" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P4" rightIndent="0.0" leftIndent="0.0" fontName="Helvetica-Bold" fontSize="12.0" leading="15" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P7" rightIndent="0.0" leftIndent="0.0" fontName="Helvetica" fontSize="12.0" leading="15" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P8" rightIndent="0.0" leftIndent="0.0" fontName="Helvetica" fontSize="12.0" leading="15" alignment="JUSTIFY" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P9" rightIndent="0.0" leftIndent="0.0" fontName="Helvetica-Bold" fontSize="12.0" leading="15" alignment="JUSTIFY" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="Standard" fontName="Helvetica"/>
+    <paraStyle name="Heading" fontName="Helvetica" fontSize="14.0" leading="17" spaceBefore="12.0" spaceAfter="6.0"/>
+    <paraStyle name="Text body" fontName="Helvetica" spaceBefore="0.0" spaceAfter="6.0"/>
+    <paraStyle name="List" fontName="Helvetica" spaceBefore="0.0" spaceAfter="6.0"/>
+    <paraStyle name="Caption" fontName="Helvetica" fontSize="12.0" leading="15" spaceBefore="6.0" spaceAfter="6.0"/>
+    <paraStyle name="Index" fontName="Helvetica"/>
+    <paraStyle name="Frame contents" fontName="Helvetica" spaceBefore="0.0" spaceAfter="6.0"/>
+    <paraStyle name="Header" fontName="Helvetica"/>
+    <paraStyle name="Normal (Web)" fontName="Helvetica" spaceBefore="14.0" spaceAfter="14.0"/>
+    <paraStyle name="Heading 3" rightIndent="0.0" leftIndent="-3.0" fontName="Helvetica" fontSize="12.0" leading="15" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="MP1" fontName="Helvetica"/>
+    </stylesheet>
+  <story>
+  <pto>
+    <para style="P3">[[ repeatIn(objects,'invoice') ]]</para>
+    <para style="terp_default_8">[[ setLang(invoice.partner_id.lang) ]]</para> 
+    <pto_header>
+    <para style="P4">RESOLUCIÓN NÚMERO ______ DE _____</para>
+    </pto_header> 
+    <para style="P7">
+      <font color="white"> </font>
+    </para>
+    <para style="P7">
+      <font color="white"> </font>
+    </para>
+    <para style="P7">POR MEDIO DE LA CUAL SE AUTORIZA EL PAGO DE UNA</para>
+    <para style="P7">CUENTA POR PARTE DE LA EMPRESA DE DESARROLLO URBANO DE</para>
+    <para style="P7">ARMENIA LTDA.</para>
+    <para style="P7">
+      <font color="white"> </font>
+    </para>
+    <para style="P7">El Gerente de la Empresa de Desarrollo Urbano de Armenia</para>
+    <para style="P7">Ltda., en uso de sus atribuciones legales y estatutarias,</para>
+    <para style="P7">
+      <font color="white"> </font>
+    </para>
+    <para style="P7">
+      <font color="white"> </font>
+    </para>
+    <para style="P7">RESUELVE:</para>
+    <para style="P7">
+      <font color="white"> </font>
+    </para>
+    <para style="P8">ARTICULO PRIMERO: Autorizar el pago de: ($ [[ invoice.amount_untaxed ]].-) a favor de [[ invoice.partner_id.name ]], por concepto de [[ invoice.comment ]]</para>
+    <para style="P8">
+      <font color="white"> </font>
+    </para>
+        <para style="P7">
+      <font color="white"> </font>
+    </para>
+    <para style="P8">ARTICULO SEGUNDO: EL pago anterior se hará con cargo a la apropiación presupuesto [[ invoice.imp_pptal.codigopresup ]] - [[ invoice.imp_pptal.conceptopresup ]].</para>
+    <para style="P8">
+      <font color="white"> </font>
+    </para>
+    <para style="P8">ARTICULO TERCERO: La presente resolución rige a partir de la fecha de expedición.</para>
+    <para style="P7">
+      <font color="white"> </font>
+    </para>
+    <para style="P7">
+      <font color="white"> </font>
+    </para>
+    <para style="P7">COMUNÍQUESE Y CUMPLASE</para>
+    <para style="P7">
+      <font color="white"> </font>
+    </para>
+    <para style="P7">
+      <font color="white"> </font>
+    </para>
+    <para style="P7">
+      <font color="white"> </font>
+    </para>
+    <para style="P8">Dada en Armenia - Quindío, el  [[ formatLang([[ invoice.date_invoice ]]</para>
+    <para style="P7">
+      <font color="white"> </font>
+    </para>
+    <para style="P7">
+      <font color="white"> </font>
+    </para>
+    <para style="P7">
+      <font color="white"> </font>
+    </para>
+    <para style="P7">
+      <font color="white"> </font>
+    </para>
+    <para style="P4">SEBASTIAN CONGOTE POSADA</para>
+    <para style="P7">GERENTE</para>
+  </pto>
+  </story>
+</document>

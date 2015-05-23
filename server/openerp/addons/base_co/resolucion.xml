@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+   	<!-- New Reports -->
+        <report 
+        auto="False" 
+        id="resolucion" 
+        model="account.invoice" 
+        name="resolucion" 
+        rml="base_co/report/resolucion.rml" 
+        string="Resolución"
+        usage="default" />
+    </data>
+</openerp>

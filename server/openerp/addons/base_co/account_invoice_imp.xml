@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+<!--
+        Hereda la vista de formulario para agregar los campos según la localización colombiana
+        Inherited form view to add the fields as Colombian location
+-->
+
+        <record model="ir.ui.view" id="view_account_invoice_formimp">
+            <field name="name">account_invoice_formimp</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_supplier_form"/>
+            <field name="type">form</field>
+            <field name="priority" eval="7"/>
+            <field name="arch" type="xml">
+                <field name="journal_id" position="after">
+                    <field name="retencion_id"/>
+                    <field name="imp_pptal"/>
+                    <field name="porcentaje"/>
+                </field>
+                <notebook>
+                    <page string="Budget">
+                        <field name="ppto_ids">
+                           <tree string="Budget" editable="bottom">
+                                <field name="presupuesto_id"/>
+                            </tree>
+                           <form string="Budget">
+                                <field name="presupuesto_id"/>
+                            </form>
+                        </field>
+                    </page>
+                </notebook>
+
+                <field name="origin" position="replace">
+                    <field name="origin" invisible="1"/>
+                </field>
+                <field name="reference" position="replace">
+                    <field name="reference" invisible="1"/>
+                </field>
+                <field name="supplier_invoice_number" position="after">
+                    <field name="ncontrato"/>
+                </field>
+                <field name="ncontrato" position="after">
+                    <field name="otrosd"/>
+                </field>
+                <field name="amount_tax" position="after">
+                    <field name="retefte"/>
+                    <field name="prodesa"/>
+                    <field name="procult"/>
+                    <field name="prohos"/>
+                    <field name="proanc"/>
+                    <field name="reteica"/>
+                    <field name="reteiva"/>
+                    <field name="otros_d"/>
+                </field>
+                <field name="otros_d" position="after">
+                    <field name="amount_des"/>
+                </field>
+                <field name="comment" position="after">
+                    <field name="otra_inf"/>
+
+                </field>
+                <field name="residual" position="after">
+                        <button name="calcular_deducciones" type='object' string='Calcular Deducciones' states='draft,proforma2'/>
+                </field>
+
+
+            </field>
+        </record>
+    </data>
+</openerp>

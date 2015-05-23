@@ -1,0 +1,29 @@
+# -*- coding: utf-8 -*-
+##############################################################################
+# Hereda el modulo res.parner y se agregan los campo para la localizacion colombiana
+# Inherits res.parner module and add the field to the Colombian location
+##############################################################################
+
+import openerp
+import re
+import codecs
+from openerp.osv import fields, osv
+from openerp.tools.translate import _
+
+import time
+
+#~ Creación de campos
+#~ Creating Fields 
+
+class presupuesto(osv.osv):
+    _name = 'presupuesto'
+    _inherit = 'presupuesto'
+    _columns = {
+        'idcodigo': fields.char('dv', size=15, requerid=True),
+        'namecod': fields.char('namecod', size=25),        
+        }
+    _order = 'idcodigo'
+    
+presupuesto()
+
+

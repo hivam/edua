@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+<!-- Definir listado codigo presupuestal-->
+
+        <record model="ir.ui.view" id="view_presupuesto_tree">
+            <field name="name">co_presupuesto.tree</field>
+            <field name="model">presupuesto</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string = "Presupuesto" >
+                    <field name = "idcodigo"/>
+                    <field name = "name"/>
+                </tree>
+            </field>
+        </record>
+
+<!-- Definir formulario codigo presupuestal-->
+        <record model="ir.ui.view" id="view_presupuesto_form">
+            <field name="name">co_presupuesto.form</field>
+            <field name="model">presupuesto</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string = "Presupuesto">
+                    <group>
+                        <field name = "idcodigo"/>
+                        <field name = "name"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+<!-- Definimos la accion para que abra el formulario -->
+        <record model="ir.actions.act_window" id="action_presupuesto">
+            <field name="name">Presupuesto</field>
+            <field name="res_model">presupuesto</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+<!-- Definimos la accion del menu -->
+        <menuitem name="Presupuesto" id="menu_presupuesto_form"  sequence="20"/>
+        <menuitem name="Presupuesto" parent="menu_presupuesto_form" id="menu_view_presupuesto_form"/>
+        <menuitem action="presupuesto.action_presupuesto" id="presupuesto_form" parent="menu_view_presupuesto_form"/>
+
+    </data>
+</openerp>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+<!--
+        Hereda la vista de formulario para agregar los campos según la localización colombiana
+        Inherited form view to add the fields as Colombian location
+-->
+
+        <record model="ir.ui.view" id="view_partner_formco">
+            <field name="name">res.partner.form.co</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="type">form</field>
+            <field name="priority" eval="2"/>
+            <field name="arch" type="xml">
+                <field name="parent_id" position="before">
+                    <field name="tdoc" placeholder="Document type - Select an option"  style="width: 25%%"/>
+                        </field>
+                <field name="parent_id" position="replace">
+                    <field name="parent_id" invisible="1"/>
+                        </field>
+                <field name="website" position="replace">
+                    <field name="website" invisible="1"/>
+                        </field>
+                <field name="fax" position="replace">
+                    <field name="fax" invisible="1"/>
+                        </field>
+                <field name="title" position="replace">
+                    <field name="title" invisible="1"/>
+                        </field>
+                <field name="street2" position="replace">
+                    <field name="street2" invisible="1"/>
+                        </field>
+                <field name="ref" position="replace"/>
+                    <field name="tdoc" position="after">
+                        <field name="ref" placeholder="identificacion" required="1"  style="width: 56%%"/>
+                        </field>
+                    <field name="name" position="replace"/>
+                    <field name="ref" position="after" >
+                        <field name="dv" placeholder="dv" attrs="{'invisible':[('tdoc','!=','31')]}"  style="width: 10%%"/>
+                    </field>
+                <field name="dv" position="after">
+                    <field name="name" placeholder="legal name" attrs="{'invisible':[('is_company','=',False)]}"/>
+                    </field>
+
+                <field name="dv" position="after">
+                    <field name="lastname" placeholder="lastname" attrs="{'required':[('is_company','=',False)], 'invisible':[('is_company','=',True)]}" on_change="onchange_name(lastname,surname,firtsname,middlename)"  style="width: 45%%"/>
+                        </field>
+                <field name="lastname" position="after">
+                    <field name="surname" placeholder="surname" attrs="{'invisible':[('is_company','=',True)]}" on_change="onchange_name(lastname,surname,firtsname,middlename)"  style="width: 45%%"/>
+                        </field>
+                <field name="surname" position="after">
+                    <field name="firtsname" placeholder="firts name" attrs="{'required':[('is_company','=',False)], 'invisible':[('is_company','=',True)]}" on_change="onchange_name(lastname,surname,firtsname,middlename)"  style="width: 45%%"/>
+                        </field>
+                <field name="firtsname" position="after">
+                    <field name="middlename" placeholder="middle name" attrs="{'invisible':[('is_company','=',True)]}" on_change="onchange_name(lastname,surname,firtsname,middlename)"  style="width: 45%%"/>
+                        </field>
+            </field>
+        </record>
+
+        <!--
+        Hereda la vista arbol para agregar la identificacion en la lista
+        Inherits the tree view to add to the list identification
+        -->
+
+        <record id="vista_partner_tree_co" model="ir.ui.view">
+            <field name="name">res.partner.tree.co</field>
+            <field name="model">res.partner</field>
+            <field name="type">tree</field>
+            <field name="inherit_id" ref="base.view_partner_tree"/>
+            <field name="arch" type="xml">
+                <field name="name" position="before">
+                    <field name="ref" string="Identification"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>
